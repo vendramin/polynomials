@@ -1,0 +1,46 @@
+\documentclass[12pt]{amsproc}
+\usepackage{mynotes}
+
+\usepackage{enumitem}
+
+% To list statements of a theorem
+\newlist{statements}{enumerate}{1}
+\setlist[statements]{
+    label=\textbf{\arabic*)},    
+    ref=\textbf{\arabic*)}               
+}
+% Macro to write implications
+\newcommand{\imp}[2]{\ref{#1} $\implies$ \ref{#2}}
+
+\newcommand{\cU}{\mathcal{U}}
+\renewcommand{\P}{\mathbb{P}}
+
+\newcommand{\upnil}{\operatorname{Nil}}
+
+\renewcommand{\course}{Polynomials}
+
+\title{\course}
+\author{Leandro Vendramin}
+\address{Department of Mathematics and Data
+Science, Vrije Universiteit Brussel, Pleinlaan 2, 1050 Brussel}
+\email{Leandro.Vendramin@vub.be}
+\thanks{}
+\date{}
+
+\begin{document}
+
+\begin{abstract}
+\end{abstract}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+\section{}
+
+\bibliographystyle{abbrv}
+\bibliography{refs}
+
+\end{document}
