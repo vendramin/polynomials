@@ -40,6 +40,92 @@ Science, Vrije Universiteit Brussel, Pleinlaan 2, 1050 Brussel}
 
 \section{}
 
+Let $A$ be a commutative ring with unity $1\ne 0$. If $R$ is a subring 
+of $A$ and $r\in R$, we denote by $R[r]$ the smallest subring 
+of $A$ containing $R$ and $r$, that is, the intersection of all subrings of $A$ containing $R$ and $r$.
+This sounds a bit abstract, but it is not. It is nothing but
+the set of polynomial expressions 
+in $r$ with coefficients in $R$, that is,
+\[
+R[r] = \{ a_0 + a_1 r + \cdots + a_n r^n : n\ge 0, a_i\in R \}.
+\]
+
+\begin{example}
+Let $R$ be a subring of $A$ and let $r\in R$. Then $R[r]=R$. In particular, 
+$R[1]=R[0]=R$.
+\end{example}
+
+\begin{example}\
+    \begin{enumerate}
+        \item $\Z[\sqrt{2}]=\{ a + b \sqrt{2} : a,b\in \Z \}$.
+        \item $\Q[\sqrt{3}]=\{ a + b \sqrt{3} : a,b\in \Q \}$.
+        \item $\Q[\sqrt[3]{5}]=\{ a + b \sqrt[3]{5} + c \sqrt[3]{25} : a,b,c\in \Q \}$.
+    \end{enumerate}
+\end{example}
+
+\begin{theorem}
+    Let $R$ be a subring of $A$ and let $a\in A$. Then
+    $R[a]$ is a subring of $A$.
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{exercise}
+    There are no ring homomorphisms $\Z[\sqrt{2}] \to \Z[\sqrt{3}]$. In particular, 
+    the rings $\Z[\sqrt{2}]$ and $\Z[\sqrt{3}]$ are not isomorphic. 
+\end{exercise}
+
+
+\begin{definition}
+    Let $R$ be a subring of $A$ and let $a\in A$. 
+    We say that $a$ is \emph{transcendental over $R$} 
+    if 
+    \[
+    r_0+r_1a+\cdots+r_na^n=0\implies r_0=r_1=\cdots=r_n=0
+    \]
+    for all $r_0,\dots,r_n\in R$. If $a$ is not transcendental over $R$, we say that $a$ is \emph{algebraic over $R$}.
+\end{definition}
+
+\begin{exercise}
+    Let $a\in A$ be transcendental over $R$... Prove that 
+    $f(a)=g(a)$ in $R[a]$ if and only if $f=g$ in $R[x]$. 
+\end{exercise}
+
+Note that $\sqrt{2}$ is algebraic over $\Z$ because it is a root of the polynomial $x^2-2\in \Z[x]$.
+In particular, 
+there is no unique algebraic expression for $3+\sqrt{2}$ with integer coefficients. For example,
+\[
+3+\sqrt{2}=1+\sqrt{2}+(\sqrt{2})^2.
+\]
+
+\begin{theorem}
+Let $x,y\in R$ be transcendental over $R$. Then $R[x]\simeq R[y]$ as rings.
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+In the same way, we can prove that if $R$ is a subring of both $A$ and $B$, 
+and $a\in A$ and $b\in B$ are transcendental over $R$, then $R[a]\simeq R[b]$ as rings.
+
+\begin{definition}
+    Let $A$ be a commutative ring with unity $1\ne 0$, and $R$ be a subring of $A$. Let 
+    $x\in A$ be transcendental over $R$. The \emph{polynomial ring} $R[X]$ 
+    in the indeterminate $X$ 
+    with coefficients in $R$ is the ring of polynomial expressions 
+    \[
+    r_0+r_1X+\cdots+r_nX^n
+    \]
+    together with a ring isomorphism $f\colon R[X]\to R[x]$ such that $f(X)=x$. 
+\end{definition}
+
+Note that the polynomial ring $R[X]$ is unique up to a unique isomorphism. If $y$ is another trascendental element 
+over $R$, then $R[X]\simeq R[x]\simeq R[y]$ as rings.
+
+
 \bibliographystyle{abbrv}
 \bibliography{refs}
 
