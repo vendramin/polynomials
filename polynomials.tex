@@ -93,11 +93,10 @@ $R[1]=R[0]=R$.
     $f(a)=g(a)$ in $R[a]$ if and only if $f=g$ in $R[x]$. 
 \end{exercise}
 
-Note that $\sqrt{2}$ is algebraic over $\Z$ because it is a root of the polynomial $x^2-2\in \Z[x]$.
-In particular, 
-there is no unique algebraic expression for $3+\sqrt{2}$ with integer coefficients. For example,
+Note that $\sqrt{2}$ is algebraic over $\Z$ because
+there is no unique algebraic expression for it with integer coefficients. For example,
 \[
-3+\sqrt{2}=1+\sqrt{2}+(\sqrt{2})^2.
+\sqrt{2}=-2+\sqrt{2}+(\sqrt{2})^2.
 \]
 
 \begin{theorem}
@@ -125,6 +124,110 @@ and $a\in A$ and $b\in B$ are transcendental over $R$, then $R[a]\simeq R[b]$ as
 Note that the polynomial ring $R[X]$ is unique up to a unique isomorphism. If $y$ is another trascendental element 
 over $R$, then $R[X]\simeq R[x]\simeq R[y]$ as rings.
 
+\framebox{existence} Very technical, see the appendix. 
+
+We often write 
+\[
+f(X)=\sum_{i=0}^n r_iX^i=r_0+r_1X+r_2X^2+\cdots+r_nX^n,
+\]
+where, by convention, $X^0=1$. 
+
+\begin{definition}
+    The \emph{degree} of a non-zero polynomial...
+
+\end{definition}
+
+The degree is well-defined because...
+
+The zero polynomial $0$ is the only polynomial that does not have a degree.
+
+\begin{example}
+    The polynomial $f(X)=\sum_{i=0}^n r_iX^i\in R[X]$ has degree $n$ if and only if $r_n\neq 0$. For example, 
+    $3+X+0X^6$ has degree one. 
+\end{example}
+
+\begin{definition}
+    Let $f(X)=\sum_{i=0}^n r_iX^i\in R[X]$ be a polynomial of degree $n$. 
+    We say that $f(X)$ is \emph{monic} if $r_n=1$. The \emph{leading coefficient} of $f(X)$ is $r_n$, 
+    and the \emph{constant term} of $f(X)$ is $r_0$.
+\end{definition}
+
+\begin{exercise}
+    Let $f(X)=...$ and $g(X)=...$. Compute...
+\end{exercise}
+
+\begin{example}
+    Find polynomials $q(X),r(X)\in \Z[X]$ such that...
+\end{example}
+
+\begin{exercise}
+    Find all polynomials $f(X)\in \Z_2[X]$ of degree at most $3$. How many are there? How many are monic?
+\end{exercise}
+
+\begin{theorem}
+Let $f(X),g(X)\in R[X]$ be non-zero polynomials. Then 
+\[ 
+\deg(f(X)g(X))\leq \deg(f(X))+\deg(g(X)).
+\] 
+If $R$ is an integral domain, 
+then $\deg(f(X)g(X))=\deg(f(X))+\deg(g(X))$.
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{corollary}
+    $R[X]$ is an integral domain if and only if $R$ is an integral domain.
+\end{corollary}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{example}
+If $R$ is an integral domain and $f(X)\in R[X]$ 
+has degree $n$, then $f(X)^m$ has degree $nm$ for all $m\ge 1$. In particular, $f(X)^m\neq 0$ for all $m\ge 1$.
+\end{example} 
+
+\begin{example}
+    Let us prove that there are no polynomials $f(X),g(X)\in \Z_2[X]$ such that 
+    $f(X)^2+g(X)^2=X$. Indeed, if $f(X)=\sum_{i=0}^n a_iX^i$ and $g(X)=\sum_{i=0}^m b_iX^i$, then
+    ...
+\end{example}
+
+\begin{exercise}
+    Let $K$ be a field. Prove that there no polynomials $f(X),g(X)\in K[X]$ such that 
+    $f(X)^2+Xg(X)^2=0$.
+\end{exercise}
+
+\section{Units} 
+
+\begin{proposition}
+    Let $R$ be an integral domain and $f(X)\in R[X]$. Then $f(X)$ is a unit in $R[X]$ if and only if $f(X)$ is a unit in $R$.
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{example}
+    $(1+2X)(1+2X)=1$ in $\Z_4[X]$, but $1+2X$ has degree one.
+\end{example}
+
+\begin{exercise}
+    Compute the units of $(\Z/4\Z)[X]$ and $(\Z/5\Z)[X]$.
+\end{exercise}
+
+\section{Application: binomial coefficients}
+
+This section is optional, but shows a nice application of polynomials.
+
+\section{Divisibility}
+
+\section{Appendix: Existence of polynomial rings}
+
+This section is rather technical and can be skipped. It is included for completeness.
 
 \bibliographystyle{abbrv}
 \bibliography{refs}
