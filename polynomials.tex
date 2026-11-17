@@ -64,13 +64,16 @@ $R[1]=R[0]=R$.
 \end{example}
 
 \begin{theorem}
+    \label{thm:subring}
     Let $R$ be a subring of $A$ and let $a\in A$. Then
     $R[a]$ is a subring of $A$.
 \end{theorem}
 
-\begin{proof}
+The proof is straightforward, but it is a good exercise to write it down.
 
-\end{proof}
+\begin{exercise}
+    Prove Theorem~\ref{thm:subring}.
+\end{exercise}
 
 \begin{exercise}
     There are no ring homomorphisms $\Z[\sqrt{2}] \to \Z[\sqrt{3}]$. In particular, 
@@ -100,12 +103,20 @@ there is no unique algebraic expression for it with integer coefficients. For ex
 \]
 
 \begin{theorem}
-Let $x,y\in R$ be transcendental over $R$. Then $R[x]\simeq R[y]$ as rings.
+Let $a,b\in R$ be transcendental over $R$. Then $R[a]\simeq R[b]$ as rings.
 \end{theorem}
 
 \begin{proof}
-
-\end{proof}
+    Every element $\alpha\in R[a]$ can be written uniquely as a polynomial expression in $a$ with coefficients in $R$, that
+    is $\alpha = r_0 + r_1 a + \cdots + r_n a^n$ for some $n\ge 0$ and $r_0,\dots,r_n\in R$.   
+    Let $f\colon R[a]\to R[b]$ be the map defined by
+    \[
+    f(r_0 + r_1 a + \cdots + r_n a^n) = r_0 + r_1 b + \cdots + r_n b^n.
+    \]
+    It is straightforward to check that $f$ is a well-defined surjective 
+    ring homomorphism. It is injective: if $f(r_0 + r_1 a + \cdots + r_n a^n)=0$, then $r_0 + r_1 b + \cdots + r_n b^n=0$ in $R[b]$. 
+    Since $b$ is transcendental over $R$, $r_0=r_1=\cdots=r_n=0$. Therefore, $f$ is an isomorphism.
+    \end{proof}
 
 In the same way, we can prove that if $R$ is a subring of both $A$ and $B$, 
 and $a\in A$ and $b\in B$ are transcendental over $R$, then $R[a]\simeq R[b]$ as rings.
@@ -124,7 +135,15 @@ and $a\in A$ and $b\in B$ are transcendental over $R$, then $R[a]\simeq R[b]$ as
 Note that the polynomial ring $R[X]$ is unique up to a unique isomorphism. If $y$ is another trascendental element 
 over $R$, then $R[X]\simeq R[x]\simeq R[y]$ as rings.
 
-\framebox{existence} Very technical, see the appendix. 
+\begin{optional}
+The existence of polynomial rings needs to be proved. We can construct $R[X]$ as the set of all sequences $(r_0,r_1,\dots)$ of elements of $R$ such that $r_i=0$ for all but finitely many $i$. The sum and product of two sequences $(r_0,r_1,\dots)$ and $(s_0,s_1,\dots)$ are defined by
+\begin{align*}
+&(r_0,r_1,\dots)+(s_0,s_1,\dots)=(r_0+s_0,r_1+s_1,\dots),\\
+&(r_0,r_1,\dots)(s_0,s_1,\dots)=(t_0,t_1,\dots),
+\end{align*}
+where $t_n=\sum_{i=0}^n r_is_{n-i}$ for all $n\ge 0$. The sequence $(1,0,0,\dots)$ is the multiplicative identity of $R[X]$. 
+We leave this calculations for an appendix.
+\end{optional}
 
 We often write 
 \[
@@ -133,12 +152,15 @@ f(X)=\sum_{i=0}^n r_iX^i=r_0+r_1X+r_2X^2+\cdots+r_nX^n,
 where, by convention, $X^0=1$. 
 
 \begin{definition}
-    The \emph{degree} of a non-zero polynomial...
-
+    The \emph{degree} of a non-zero polynomial 
+    \[
+    f(X)=\sum_{i=0}^nr_iX^i
+    \]
+    is the largest integer $d$ such that $r_d\neq 0$. 
+    We denote the degree of $f(X)$ by $\deg(f(X))$.
 \end{definition}
 
-The degree is well-defined because...
-
+The degree is well-defined because $\{ i : r_i\neq 0 \}$ is non-empty and finite, so it has a maximum.
 The zero polynomial $0$ is the only polynomial that does not have a degree.
 
 \begin{example}
@@ -174,7 +196,18 @@ then $\deg(f(X)g(X))=\deg(f(X))+\deg(g(X))$.
 \end{theorem}
 
 \begin{proof}
+    Let $f(X)=\sum_{i=0}^n r_iX^i$ and $g(X)=\sum_{j=0}^m s_jX^j$ be non-zero polynomials of degree $n$ and $m$, respectively. Then
+\begin{align*}
+f(X)g(X)&=r_0s_0+(r_0s_1+r_1s_0)X+(r_0s_2+r_1s_1+r_2s_0)X^2+\cdots+(r_ns_m)X^{n+m}\\
+&= \sum_{k=0}^{n+m} t_k X^k,
+\end{align*}
+where $t_k=\sum_{i+j=k} r_is_j$ for all $k\in\{0,\dots,n+m\}$. In particular, $t_{n+m}=r_ns_m$ 
+and $\deg(f(X)g(X))\leq \deg(f(X))+\deg(g(X))$. 
 
+If $R$ is an integral domain, then $r_n\neq 0$ and $s_m\neq 0$, so $t_{n+m}\neq 0$. Therefore
+\[
+\deg(f(X)g(X))=n+m=\deg(f(X))+\deg(g(X)).\qedhere    
+\]
 \end{proof}
 
 \begin{corollary}
