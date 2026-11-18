@@ -151,6 +151,11 @@ f(X)=\sum_{i=0}^n r_iX^i=r_0+r_1X+r_2X^2+\cdots+r_nX^n,
 \]
 where, by convention, $X^0=1$. 
 
+\begin{exercise}
+    \label{xca:subring}
+    Prove that $R$ is a subring of $R[X]$.
+\end{exercise}
+
 \begin{definition}
     The \emph{degree} of a non-zero polynomial 
     \[
@@ -187,6 +192,7 @@ The zero polynomial $0$ is the only polynomial that does not have a degree.
 \end{exercise}
 
 \begin{theorem}
+\label{thm:degree}
 Let $f(X),g(X)\in R[X]$ be non-zero polynomials. Then 
 \[ 
 \deg(f(X)g(X))\leq \deg(f(X))+\deg(g(X)).
@@ -215,7 +221,8 @@ If $R$ is an integral domain, then $r_n\neq 0$ and $s_m\neq 0$, so $t_{n+m}\neq 
 \end{corollary}
 
 \begin{proof}
-
+    If $R[X]$ is an integral domain, then $R$ is an integral domain by Exercise~\ref{xca:subring}. Conversely, if $R$ is an integral domain and $f(X),g(X)\in R[X]$ are non-zero polynomials, then $\deg(f(X)g(X))=\deg(f(X))+\deg(g(X))\ge 0$ by Theorem~\ref{thm:degree}. Thus 
+    $f(X)g(X)\neq 0$ and hence $R[X]$ is an integral domain.
 \end{proof}
 
 \begin{example}
@@ -241,7 +248,12 @@ has degree $n$, then $f(X)^m$ has degree $nm$ for all $m\ge 1$. In particular, $
 \end{proposition}
 
 \begin{proof}
-
+    If $f(X)$ is a unit in $R$, then there exists $g(X)\in R$ such that $f(X)g(X)=1$. In particular, $f(X)$ is a unit in $R[X]$. 
+    Conversely, if $f(X)$ is a unit in $R[X]$, then there exists $g(X)\in R[X]$ such that $f(X)g(X)=1$. By Theorem~\ref{thm:degree}, 
+    \[ 
+    \deg(f(X)g(X))=\deg(f(X))+\deg(g(X))=0.
+    \] 
+    Therefore $\deg(f(X))=0$ and hence $f(X)$ is a unit in $R$.
 \end{proof}
 
 \begin{example}
