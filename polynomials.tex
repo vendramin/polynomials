@@ -270,6 +270,65 @@ This section is optional, but shows a nice application of polynomials.
 
 \section{Divisibility}
 
+\begin{definition}
+    We say that $f(X)\in R[X]$ \emph{divides} $g(X)\in R[X]$ if there exists a polynomial $q(X)\in R[X]$ such that $g(X)=f(X)q(X)$. In this case, we write $f(X)\mid g(X)$.
+\end{definition}
+
+Our aim is to see that divisibility in $R[X]$ is similar to divisibility in $\Z$. 
+For example, we will see that if $f(X)\mid g(X)$ and $g(X)\mid f(X)$, then $f(X)=u g(X)$ for some unit $u\in R[X]$. For this similarity to hold, we need to assume that $R$ is a field. 
+
+\begin{example}
+$\Z[X]$ is still far from $\Z$ in terms of divisibility. For example, 
+2 and $X$ are ``coprime'' in $\Z[X]$ because they have no common divisors, 
+there are no $r(X),s(X)\in \Z[X]$ such that $2r(X)+Xs(X)=1$.
+\end{example}
+
+We will consider polynoamials over a field $K$. Then we can 
+prove a version of the \emph{Euclidean algorithm} for polynomials, which is the key to prove many results about divisibility in $K[X]$.
+
+\begin{theorem}
+    Let $a(X)\in K[X]$ and let $0\ne b(X)\in K[X]$. 
+    Then there exist unique polynomials $q(X),r(X)\in K[X]$ such that
+    \[
+    a(X)=b(X)q(X)+r(X)
+    \]
+    with $r(X)=0$ or $\deg(r(X))<\deg(b(X))$.
+\end{theorem}
+
+\begin{proof}
+    Let $P$ be the set of polynomials in $K[X]$ of the 
+    form $a(X)-b(X)q(X)$ for some $q(X)\in K[X]$, that is,
+    \[
+    P=\{ a(X)-b(X)q(X) : q(X)\in K[X] \}.
+    \]
+    
+    For example, 
+    $a(X)\in P$ (because $a(X)=a(X)-b(X)0$) and 
+    $a(X)+3b(X)\in P$ (because $a(X)+3b(X)=a(X)-b(X)(-3)$).
+    
+    Note that $0\in P$ if and only if $b(X)\mid a(X)$. 
+    
+    If $b(X)$ divides $a(X)$, then we can take $q(X)$ such that $a(X)-b(X)q(X)=0$ and we are done.
+    If $b(X)$ does not divide $a(X)$, then $0\notin P$ and $P\ne\empty$. 
+    Let $r(X)\in P$ be of minimal degree. Then there exists $q(X)\in K[X]$ such that $r(X)=a(X)-b(X)q(X)$. We claim that $\deg(r(X))<\deg(b(X))$. If not, then $\deg(r(X))\ge \deg(b(X))$. Let $c$ be the leading coefficient of $b(X)$ and let $d$ be the leading coefficient of $r(X)$:
+    \begin{align*}
+        b(X) &= b_mX^m+\cdots,\\
+        r(X) &= r_nX^n+\cdots.
+    \end{align*} 
+    Since $K$ is a field and $b_m\ne 0$, $b_m^{-1}$ exists. Let  
+    \[ 
+    s(x)=r(X)-\frac{r_n}{b_m}X^{n-m}b(X).
+    \]
+    Then $0\ne s(X)\in P$. If $s(x)=0$, then $b(X)\mid a(X)$, which is a 
+    contradiction. Moreover, $s(X)\in P$ since $s(X)=a(X)-b(X)(q(X)+\frac{r_n}{b_m}X^{n-m})$. Finally, $\deg(s(X))<\deg(r(X))$ because 
+\[
+r_nX^n-\frac{r_n}{b_m}X^{n-m}(b_mX^m+\cdots)=r_nX^n-r_nX^n+\cdots 
+%\text{something of degree $<n$}.
+\]
+has degree $<n$. 
+This contradicts the minimality of $\deg(r(X))$. 
+\end{proof}
+
 \section{Appendix: Existence of polynomial rings}
 
 This section is rather technical and can be skipped. It is included for completeness.
